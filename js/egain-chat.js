@@ -1,1 +1,29 @@
-(function(){if(window.eGainOneTagUtil||top!==self){return}var isChatRelayIframeEnabled=function(){var enabled=false;if(navigator){enabled=0<=navigator.userAgent.indexOf("Trident")||0<=navigator.userAgent.indexOf("Edge")}return enabled};var addChatRelayIframe=function(){if(true===isChatRelayIframeEnabled()){var chatRelayIframeSrc=getEgainChatUrl();if(chatRelayIframeSrc){var slashIndex=chatRelayIframeSrc.lastIndexOf("/");if(0<=slashIndex){chatRelayIframeSrc=chatRelayIframeSrc.substring(0,slashIndex+1);if(chatRelayIframeSrc){chatRelayIframeSrc+="chat-relay-frame.html";var chatRelayIframe=document.createElement("iframe");chatRelayIframe.id="egain-chat-relay-frame";chatRelayIframe.name="egain-chat-relay-frame";chatRelayIframe.src=chatRelayIframeSrc;chatRelayIframe.title="";(chatRelayIframe.frameElement||chatRelayIframe).style.cssText="width: 0; height: 0; border: 0; position: fixed; left: 0; bottom: 0";where.appendChild(chatRelayIframe)}}}}};var dom,doc,where,iframe=document.createElement("iframe");iframe.src="javascript:false";iframe.title="";(iframe.frameElement||iframe).style.cssText="width: 0; height: 0; border: 0";where=document.getElementsByTagName("head")[0];where.appendChild(iframe);addChatRelayIframe();try{doc=iframe.contentWindow.document}catch(e){dom=document.domain;iframe.src="javascript:var d=document.open();d.domain='"+dom+"';void(0);";doc=iframe.contentWindow.document}doc.open()._l=function(){var js=this.createElement("script");if(dom)this.domain=dom;js.id="egain-docked-chat-async";var src=getEgainChatUrl();if(src!==""){var dockedChatJSPath=src.substring(0,src.lastIndexOf("/")+1);dockedChatJSPath+="egain-docked-chat.js";js.src=dockedChatJSPath;this.body.appendChild(js)}};doc.write('<body onload="document._l();">');doc.close();function getEgainChatUrl(){var src="";var addOn=document.getElementById("_egainallowdockchat");if(addOn&&addOn.src){src=addOn.src}if(src===""){var scripts=document.getElementsByTagName("SCRIPT");for(var i=0;i<scripts.length;i++){if(scripts[i].src.replace(/\\/,"/").indexOf("/egain-chat.")!==-1){src=scripts[i].src}}}return src}})();
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<title>406 - Client browser does not accept the MIME type of the requested page.</title>
+<style type="text/css">
+<!--
+body{margin:0;font-size:.7em;font-family:Verdana, Arial, Helvetica, sans-serif;background:#EEEEEE;}
+fieldset{padding:0 15px 10px 15px;} 
+h1{font-size:2.4em;margin:0;color:#FFF;}
+h2{font-size:1.7em;margin:0;color:#CC0000;} 
+h3{font-size:1.2em;margin:10px 0 0 0;color:#000000;} 
+#header{width:96%;margin:0 0 0 0;padding:6px 2% 6px 2%;font-family:"trebuchet MS", Verdana, sans-serif;color:#FFF;
+background-color:#555555;}
+#content{margin:0 0 0 2%;position:relative;}
+.content-container{background:#FFF;width:96%;margin-top:8px;padding:10px;position:relative;}
+-->
+</style>
+</head>
+<body>
+<div id="header"><h1>Server Error</h1></div>
+<div id="content">
+ <div class="content-container"><fieldset>
+  <h2>406 - Client browser does not accept the MIME type of the requested page.</h2>
+  <h3>The page you are looking for cannot be opened by your browser because it has a file name extension that your browser does not accept.</h3>
+ </fieldset></div>
+</div>
+</body>
+</html>

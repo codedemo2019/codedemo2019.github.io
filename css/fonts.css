@@ -2,11 +2,7 @@
 /* CSS Document */
 @font-face {
   font-family: 'dk';
-  src:  url('/fonts/dk_eot.eot?jeznaw');
-  src:  url('/fonts/dk_eotie.eot?jeznaw#iefix') format('embedded-opentype'),
-    url('/fonts/dk_ttf.ttf?jeznaw') format('truetype'),
-    url('/fonts/dk_woff.woff?jeznaw') format('woff'),
-    url('/fonts/dk_svg.svg?jeznaw#icomoon') format('svg');
+  src:  url('/orther/dk_ttf.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -40,6 +36,21 @@
 
 
 /* Icons - Replace the section for new additions */
+.icon-resistor:before {
+  content: "\e908";
+}
+.icon-calc:before {
+  content: "\e909";
+}
+.icon-circuit-chat:before {
+  content: "\e90a";
+}
+.icon-maker-logo:before {
+  content: "\e90b";
+}
+.icon-new-starburst:before {
+  content: "\e90c";
+}
 .icon-align-left:before {
   content: "\f036";
 }

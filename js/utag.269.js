@@ -9,7 +9,7 @@ window[window.GoogleAnalyticsObject] = window[window.GoogleAnalyticsObject] || f
   (window[window.GoogleAnalyticsObject].q = window[window.GoogleAnalyticsObject].q || []).push(arguments);
 };
 
-//tealium universal tag - utag.sender.7110 ut4.0.201908092257, Copyright 2019 Tealium.com Inc. All Rights Reserved.
+//tealium universal tag - utag.sender.7110 ut4.0.201908192001, Copyright 2019 Tealium.com Inc. All Rights Reserved.
 
 try {
   (function(id, loader) {
@@ -617,7 +617,7 @@ if (typeof b['order_subtotal_in_usd'] != 'undefined' && b['order_id_on_confirmat
   if (b['mobile_site'] !== 'true') {
       b["ExtRun"] = utag.dkTrk('291.1');
     if (typeof b['ref_page_event'] == 'undefined' || b['ref_page_event'] != 'Submit Order') {
-      b['pre_order_id'] = b['order_id_on_confirmation_page'];
+//      b['pre_order_id'] = b['order_id_on_confirmation_page'];
       b['order_subtotal_in_usd'] = (function(){return;})();
       b['order_id_on_confirmation_page'] = (function(){return;})();
       b['_corder'] = (function(){return;})();
@@ -637,25 +637,18 @@ if (typeof b['order_subtotal_in_usd'] != 'undefined' && b['order_id_on_confirmat
 } } catch(e){ utag.DB(e) }  },
 function(a,b){ try{ if(1){
 // Set Registration Status to 1 if Customer ID or Registration ID is defined.
-/*
-if ((typeof b['customer_id'] != 'undefined' && b['page_type'] !== 'SC' && b['page_sub_type'] !== 'SCN')
-    || (typeof b['registered_user_id'] != 'undefined' && b['registered_user_id'] != '0')
-    || b['cp.DKLoggedIn'] === 'true'){
-        b["ExtRun"] = utag.dkTrk('292');
-  b['registration_status'] = '1';
-}
-*/
-
-var element = document.getElementById('my_digikey_logged_in');
+var element = document.getElementById('authControls');
 b.registration_status = "";
-if (typeof element !== 'undefined' && element !== null) {
-    if (element.innerText.indexOf('Hello') > -1) {
-        b.registration_status = "1";
-    } 
-} else if (b["dom.pathname"].indexOf('/guest/') < 0) {
+if (b.page_type === 'SC' && (b.page_sub_type === 'SCAD' || b.page_sub_type === 'SI' || b.page_sub_type === 'BL'|| b.page_sub_type === 'POR')) 
+{
+    if (b["dom.pathname"].indexOf('/guest/') < 0) {
         b.registration_status = '1';
+        b["ExtRun"] = utag.dkTrk('292.1');
+    }
+} else if (!element) {
+    b.registration_status = "1";
+    b["ExtRun"] = utag.dkTrk('292.2');
 }
-
 
 
 		     
@@ -1027,17 +1020,32 @@ if (b.page_type === 'PS') {
 function(a,b){ try{ if(1){
 if (a === 'view') {
     if (b.ref_page_type === 'RU' && b.ref_page_sub_type === 'LOG' && b.ref_page_id === 'Standard Login') {
-        if (b.page_type === 'RU' && b.page_sub_type === 'LOG' && b.ref_page_event === 'Successful Login') {
-            b.ref_page_event = 'Login Failed';
-            b.ExtRun = utag.dkTrk('441')
+        if (b.page_type === 'RU' && b.ref_page_event === 'Successful Login') {
+            if (b.page_sub_type === 'LOG') {
+                b.ref_page_event = 'Login Failed';
+                b.ExtRun = utag.dkTrk('441.1');
+            } else if (b.page_sub_type === 'RUM') {
+                b.ref_page_event = 'Successful Login - New Password Required';
+                b.ExtRun = utag.dkTrk('441.4');
+            }
         }
     }
 
     if (b.ref_page_event === 'Header Nav' && b.html_element1 === 'primary dropdown--button' && b.html_element2 === 'authControls') {
         if (b.page_type !== 'RU' && b.page_sub_type !== 'LOG') {
             b.ref_page_event = 'Header Nav - Successful Login';
+            b.ExtRun = utag.dkTrk('441.2');
         }
     }
+    
+    if (b.ref_page_type === 'RU' && b.ref_page_sub_type === 'RUM' && b.ref_page_id === 'Change Password') {
+        if (b.page_type === 'RU' && b.page_sub_type === 'RUM' && b.ref_page_event === 'Change Password') {
+            b.ref_page_event = 'Change Password Failed';
+            b.ExtRun = utag.dkTrk('441.3');
+        }
+    }
+
+
 }
 } } catch(e){ utag.DB(e) }  },
 function(a,b){ try{ if(1){

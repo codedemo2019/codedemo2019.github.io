@@ -81,23 +81,23 @@ body.header {
 	background-color: #ccc;
 	border: solid 1px #666;
 	border-radius: 4px;
-	background-image: url("/image/gray-button-background.jpg");
+	background-image: url("//www.digikey.com/~/media/images/global/buttons/gray-button-background.jpg");
 	cursor: pointer;
 }
 .cookie-wrapper .button:hover {
 	background-color: #666;
-	background-image: url("/image/gray-button-background-hover.jpg");
+	background-image: url("//www.digikey.com/~/media/images/global/buttons/gray-button-background-hover.jpg");
 	color: #fff;
 	border-color: #333;
 	text-decoration: none !important;
 }
 .cookie-wrapper .button.secondary {
 	background-color: #FFC425;
-	background-image: url("/image/yellow-button-background.jpg");
+	background-image: url("//www.digikey.com/~/media/images/global/buttons/yellow-button-background.jpg");
 }
 .cookie-wrapper .button.secondary:hover {
 	background-color: #403106;
-	background-image: url("/image/yellow-button-background-hover.jpg");
+	background-image: url("//www.digikey.com/~/media/images/global/buttons/yellow-button-background-hover.jpg");
 	border-color: #000;
 }
 .cookie-notice {
@@ -135,7 +135,7 @@ body.header {
 	white-space: nowrap;
 	font-size: 14px;
 	width: auto !important;
-	background: url(//www.digikey.com/~/media/images/global/icons/x.png) no-repeat center right 5px / 22px 22px, url("/image/yellow-button-background.jpg") repeat 0 0;
+	background: url(//www.digikey.com/~/media/images/global/icons/x.png) no-repeat center right 5px / 22px 22px, url("//www.digikey.com/~/media/images/global/buttons/yellow-button-background.jpg") repeat 0 0;
 }
 
 .cookie-notice .button.secondary:hover {

@@ -1,4 +1,4 @@
-﻿@charset "utf-8";
+@charset "utf-8";
 /* CSS Document */
 html, body {
     margin: 0;
@@ -215,19 +215,19 @@ blockquote {
   background-color:#ccc;
   border:solid 1px #666;
   border-radius: 4px;
-  background-image:url("/image/gray-button-background.jpg");
+  background-image:url("//www.digikey.com/~/media/images/global/buttons/gray-button-background.jpg");
     cursor:pointer;
 }
 .button:hover {
   background-color:#666;
-    background-image:url("/image/gray-button-background-hover.jpg");
+    background-image:url("//www.digikey.com/~/media/images/global/buttons/gray-button-background-hover.jpg");
   color:#fff;
     border-color:#333;
   text-decoration: none !important;
 }
 .button.disabled, .button.disabled:hover {
   background-color:#ccc;
-    background-image:url("/image/gray-button-background-hover.jpg");
+    background-image:url("//www.digikey.com/~/media/images/global/buttons/gray-button-background-hover.jpg");
     border-color:#666;
   cursor:default;
 }
@@ -236,32 +236,32 @@ blockquote {
     color:#fff;
     background-color:#CE2828;
     border-color:#333;
-    background-image:url("/image/red-button-background.jpg");
+    background-image:url("//www.digikey.com/~/media/images/global/buttons/red-button-background.jpg");
 }
 .button.primary:hover {
   background-color:#520a0a;
-    background-image:url("/image/red-button-background-hover.jpg");
+    background-image:url("//www.digikey.com/~/media/images/global/buttons/red-button-background-hover.jpg");
     border-color:#000;
 }
 .button.primary.disabled, .button.primary.disabled:hover {
     background-color:#CE2828;
-    background-image:url("/image/red-button-background-hover.jpg");
+    background-image:url("//www.digikey.com/~/media/images/global/buttons/red-button-background-hover.jpg");
     border-color:#666;
     cursor:default;
 }
 
 .button.secondary {
   background-color:#FFC425;
-  background-image:url("/image/yellow-button-background.jpg");
+  background-image:url("//www.digikey.com/~/media/images/global/buttons/yellow-button-background.jpg");
 }
 .button.secondary:hover {
     background-color:#403106;
-    background-image:url("/image/yellow-button-background-hover.jpg");
+    background-image:url("//www.digikey.com/~/media/images/global/buttons/yellow-button-background-hover.jpg");
     border-color:#000;
 }
 .button.secondary.disabled, .button.secondary.disabled:hover {
   background-color:#FFC425;
-    background-image:url("/image/yellow-button-background-hover.jpg");
+    background-image:url("//www.digikey.com/~/media/images/global/buttons/yellow-button-background-hover.jpg");
     border-color:#999;
     cursor:default;
 }
